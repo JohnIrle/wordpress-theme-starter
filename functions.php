@@ -3,6 +3,7 @@
 function startertheme_theme_support() {
 	// Adds dynamic title tag support
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'custom-logo' );
 }
 
 add_action( 'after_setup_theme', 'startertheme_theme_support' );
@@ -36,10 +37,10 @@ function startertheme_register_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'startertheme_register_scripts' );
 
-if (!function_exists('register_navwalker')) :
+if ( ! function_exists( 'register_navwalker' ) ) :
 	function register_navwalker() {
 		require( 'inc/bootstrap_5_wp_nav_menu_walker.php' );
 	}
 endif;
 
-add_action('after_setup_theme', 'register_navwalker');
+add_action( 'after_setup_theme', 'register_navwalker' );
